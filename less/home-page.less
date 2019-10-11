@@ -1,8 +1,38 @@
 // Home Content
 
+  
+
 .home {
+  
+ 
 
   .intro {
+    margin: 0 7%;
+    max-width: 100vw;
+    @media @phone {
+      width: 100%;
+    }
+  
+    
+    .earth-wrapper {
+      @media @phone {
+        // width: 100%;
+        margin-left: -7%;
+      }
+     
+      .earth {
+        max-width: 100%;
+      }
+        @media @phone {
+          width: 100%;
+          
+        }
+     
+      
+    }//closes earthwrapper
+    
+    
+    
 
     h2 {
       padding: 15px;
@@ -11,24 +41,43 @@
     p {
       padding:0 15px;
     }
+  }//closes Intro
   
-  }
 
   .space-images {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    margin: 0 7%;
+    @media @phone {
+      .displayColumn();
+      height: 40vh;
+      width: 80vw;
+      
+      .sky, .launch {
+      display: none;
+    }
+
+      
+      
+    } //closes media query
+
 
     img {
       width: 28%;
-      margin: 20px 2.5%;
+      margin: 2% 2%;
       border-radius: 20px;
       height: 100%;
-    }
-  }
+      @media @phone {
+        width: 100%;
+          
+
+      }//closes media query
+    }//closes img
+  }//closes space-images
 
   .visit-planets {
     padding: 15px;
+    margin: 0 7%;
 
     h3 {
       margin-top: 11px;
@@ -43,11 +92,20 @@
     margin-top: 60px;
     border-top: 1px solid @main-border-color;
     padding: 50px 60px;
-    display: flex;
-    justify-content: center;
+    .displayCenter();
+    @media @phone {
+      .displayColumn(@flexD: column-reverse);
+      width: 90%;
+      margin: 2%;
+      padding: 2%;
+    }
 
     .walk-text {
       width: 50%;
+      @media @phone {
+        width: 100%;
+        margin-left: 4%;
+      }
 
       h3 {
         margin-bottom: 10px;
@@ -58,12 +116,27 @@
       }
 
       .btn {
+        .custom-btn(@porcelain, @btn-bg-color);
+          &:hover{
+          background-color: @porcelain;
+          color: @btn-bg-color;
+        }
+        
+          @media @phone {
+            width: 100%;
+            height: 8vh;
+            border-radius: 9px;
+          } 
       }
-    }
+    }//closes walk-text
 
     .walk-img {
       width: 46%;
       margin-left: 4%;
+      @media @phone {
+        width: 100%;
+        
+      }
       
       img {
         width: 100%;
@@ -72,4 +145,5 @@
       }
     }
   }
+
 }// home
